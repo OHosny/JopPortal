@@ -9,6 +9,7 @@ import { JobListingComponent } from './screens/job-listing/job-listing.component
 import { MyJobsComponent } from './screens/my-jobs/my-jobs.component';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 export const routes: Routes = [
     {
         path:'',
@@ -61,8 +62,10 @@ export const routes: Routes = [
 
 ];
 @NgModule({
-    imports:[RouterModule.forRoot(routes)],
+    imports:[RouterModule.forRoot(routes),                        
+    ],
     exports:[RouterModule]
+    
 })
 export class AppRoutingModule{}
 
