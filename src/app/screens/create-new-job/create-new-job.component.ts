@@ -8,5 +8,18 @@ import { Component } from '@angular/core';
   styleUrl: './create-new-job.component.css'
 })
 export class CreateNewJobComponent {
+  jobObj : any = {
+    "JobId" : 0 ,
+    "JobName" : "" ,
+    "CreatedDate" : new Date() ,
+    "EmployerId" : 0 ,
+    "CategoryId" : 0 ,
+    "Experience" : "",
+    "Package" : "",
+    "Location" : "",
+    "JobDescription" :"",
+    "IsActive":true
+
+  }
 
 }

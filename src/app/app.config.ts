@@ -6,6 +6,7 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
 
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
+import { provideHttpClient } from '@angular/common/http';
 
 
 const firebaseConfig = {
@@ -19,6 +20,7 @@ const firebaseConfig = {
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideHttpClient(),
     provideRouter(routes), provideClientHydration(),
     importProvidersFrom(
       provideFirebaseApp(() => initializeApp(firebaseConfig)),

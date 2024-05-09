@@ -10,8 +10,8 @@
                             <div class="row pb-2">
                                 <div class="col-12 text-center">
                                     <div class="btn-group">
-                                        <button type="button" (click)="isJobSeeker=true" class="btn" [ngClass]="isJobSeeker? 'btn-success' : 'btn-primary'">Job Seeker</button>
-                                        <button type="button" (click)="isJobSeeker=false" class="btn" [ngClass]="!isJobSeeker? 'btn-success' : 'btn-primary'">Employer</button>
+                                        <button type="button" (click)="isJobSeeker=true" class="btn" [ngClass]="isJobSeeker==true ? 'btn-success' : 'btn-primary'">Job Seeker</button>
+                                        <button type="button" (click)="isJobSeeker=false" class="btn" [ngClass]="isJobSeeker==false? 'btn-success' : 'btn-primary'">Employer</button>
                                     </div>
                                     
                                 </div>
@@ -60,25 +60,25 @@
                             </div>
                             <div *ngIf="!isJobSeeker">
                                 <div class="form-outline mb-1">
-                                    <input type="text" id="form3Example1q" class="form-control" />
+                                    <input type="text" id="form3Example1q" [(ngModel)]="employerObj.CompanyName"name="CompanyName" class="form-control" />
                                     <label class="form-label" for="form3Example1q">Company Name</label>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-4 mb-1">
                                         <div class="form-outline-datepicker">
-                                            <input type="text" class="form-control" id="exampleDatepicker1" />
+                                            <input type="text" [(ngModel)]="employerObj.EmailId"name="EmailId" class="form-control" id="exampleDatepicker1" />
                                             <label for="exampleDatepicker1" class="form-label">Email</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4 mb-1">
                                         <div class="form-outline-datepicker">
-                                            <input type="text" class="form-control" id="exampleDatepicker1" />
+                                            <input type="text"[(ngModel)]="employerObj.MobileNo"name="MobileNo" class="form-control" id="exampleDatepicker1" />
                                             <label for="exampleDatepicker1" class="form-label">Mobile</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4 mb-1">
                                         <div class="form-outline-datepicker">
-                                            <input type="text" class="form-control" id="exampleDatepicker1" />
+                                            <input type="text"[(ngModel)]="employerObj.PhoneNo"name="PhoneNo" class="form-control" id="exampleDatepicker1" />
                                             <label for="exampleDatepicker1" class="form-label">Phone</label>
                                         </div>
                                     </div>
@@ -86,13 +86,13 @@
                                     <div class="row mb-1 pb-2 pd-md-0">
                                         <div class="col-md-6">
                                             <div class="form-outline">
-                                                <input type="text" class="form-control" id="form3Example1w" />
+                                                <input type="text"[(ngModel)]="employerObj.LogoURL"name="LogoURL" class="form-control" id="form3Example1w" />
                                                 <label for="form3Example1w" class="form-label">Company Logo Url</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-outline">
-                                                <input type="text" class="form-control" id="form3Example1w" />
+                                                <input type="text"[(ngModel)]="employerObj.GstNo"name="GstNo" class="form-control" id="form3Example1w" />
                                                 <label for="form3Example1w" class="form-label">GST No</label>
                                             </div>
                                         </div>
@@ -101,31 +101,31 @@
                                     <div class="row mb-1 pb-2 pb-md-0">
                                         <div class="col-md-4">
                                             <div class="form-outline">
-                                                <input type="text" class="form-control" id="form3Example1w" />
+                                                <input type="text"[(ngModel)]="employerObj.City"name="City" class="form-control" id="form3Example1w" />
                                                 <label for="form3Example1w" class="form-label">City</label>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-outline">
-                                                <input type="text" class="form-control" id="form3Example1w" />
+                                                <input type="text"[(ngModel)]="employerObj.State" name="State"class="form-control" id="form3Example1w" />
                                                 <label for="form3Example1w" class="form-label">State</label>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-outline">
-                                                <input type="text" class="form-control" id="form3Example1w" />
+                                                <input type="text"[(ngModel)]="employerObj.PinCode"name="PinCode" class="form-control" id="form3Example1w" />
                                                 <label for="form3Example1w" class="form-label">Pin-Code</label>
                                             </div>
                                         </div>
     
                                     </div>
                                     <div class="form-outline mb-1">
-                                        <textarea name="" class="form-control" rows="3"></textarea>
+                                        <textarea name=""[(ngModel)]="employerObj.CompanyAddress"name="CompanyAddress" class="form-control" rows="3"></textarea>
                                         <label class="form-label" for="form3Example1q">Address</label>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 text-center">
-                                            <button class="btn btn-success btn-lg mb-1">Register</button>
+                                            <button (click)="register()" class="btn btn-success btn-lg mb-1">Register</button>
                                         </div>
                                     </div>
                             </div>
