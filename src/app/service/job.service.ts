@@ -13,4 +13,10 @@ export class JobService {
     return this.http.post(this.apiEndPoint + 'employers',obj)
 
   }
+  registerAsJobSeeker(obj :any){
+    return this.http.post(this.apiEndPoint + 'jobSeekers',obj)
+  }
+  login(obj :any){
+    return this.http.post(this.apiEndPoint + 'users/login',obj)
+  }
 }

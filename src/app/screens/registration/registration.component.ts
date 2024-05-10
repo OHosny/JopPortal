@@ -16,6 +16,7 @@ export class RegistrationComponent {
   employerObj:  any ={
         "CompanyName": "",
         "EmailId": "",
+        "Password":"",
         "MobileNo": "",
         "PhoneNo": "",
         "CompanyAddress": "",
@@ -25,6 +26,14 @@ export class RegistrationComponent {
         "LogoURL": "",
         "GstNo": "",
   }
+  jobSeekerObj :any ={
+    "FullName": "",
+    "EmailId": "",
+    "Password":"",
+    "MobileNo": "",
+    "ExperienceStatus": "",
+    "ResumeUrl": "",
+  }
   constructor(private job:JobService,private router : Router){
     
   }
@@ -33,6 +42,16 @@ export class RegistrationComponent {
       if(res.Result){
         alert('register done')
         this.router.navigate(["/home"])
+      }else{
+        alert('register not done')
+      }
+    })
+  }
+  registerAsJobSeeker(){
+    this.job.registerAsJobSeeker(this.jobSeekerObj).subscribe((res:any)=>{
+      if(res.Result){
+        alert('register done')
+        this.router.navigate(["/login"])
       }else{
         alert('register not done')
       }

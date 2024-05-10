@@ -18,25 +18,26 @@
                             </div>
                             <div *ngIf="isJobSeeker">
                                 <div class="form-outline mb-1">
-                                    <input type="text" id="form3Example1q" class="form-control" />
+                                    <input type="text" id="form3Example1q" [(ngModel)]="jobSeekerObj.FullName"name="FullName" class="form-control" />
                                     <label class="form-label" for="form3Example1q">Full Name</label>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-4 mb-1">
                                         <div class="form-outline-datepicker">
-                                            <input type="text" class="form-control" id="exampleDatepicker1" />
+                                            <input type="text" class="form-control"[(ngModel)]="jobSeekerObj.EmailId"name="EmailId" id="exampleDatepicker1" />
                                             <label for="exampleDatepicker1" class="form-label">Email</label>
                                         </div>
+                                        
                                     </div>
                                     <div class="col-md-4 mb-1">
                                         <div class="form-outline-datepicker">
-                                            <input type="text" class="form-control" id="exampleDatepicker1" />
+                                            <input type="text" class="form-control"[(ngModel)]="jobSeekerObj.MobileNo"name="MobileNo" id="exampleDatepicker1" />
                                             <label for="exampleDatepicker1" class="form-label">Phone</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4 mb-1">
                                         <div class="form-outline datepicker">
-                                            <select name ="ExperienceStatus" class="form-control">
+                                            <select name ="ExperienceStatus" [(ngModel)]="jobSeekerObj.ExperienceStatus"name="ExperienceStatus" class="form-control">
                                                 <option value="" selected disabled>Select Experience</option>
                                                 <option value="Fresher">Fresher</option>
                                                 <option value="Experienced">Experienced</option>
@@ -47,12 +48,18 @@
 
                                 </div>
                                 <div class="form-outline mb-1">
-                                    <input type="text" id="form3Example1q" class="form-control" />
+                                    <input type="text" id="form3Example1q" [(ngModel)]="jobSeekerObj.Password"name="Password" class="form-control" />
+                                    <label class="form-label" for="form3Example1q">Password</label>
+                                </div>
+                                
+
+                                <div class="form-outline mb-1">
+                                    <input type="text" id="form3Example1q"[(ngModel)]="jobSeekerObj.ResumeUrl"name="ResumeUrl" class="form-control" />
                                     <label class="form-label" for="form3Example1q">Resume URL</label>
                                 </div>
                                 <div class="row">
                                     <div class="col-12 text-center">
-                                        <button class="btn btn-success btn-lg mb-1">Register</button>
+                                        <button (click)="registerAsJobSeeker()" class="btn btn-success btn-lg mb-1">Register</button>
                                     </div>
                                 </div>
                                 
@@ -82,6 +89,10 @@
                                             <label for="exampleDatepicker1" class="form-label">Phone</label>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="form-outline mb-1">
+                                    <input type="text" id="form3Example1q" [(ngModel)]="jobSeekerObj.Password"name="Password" class="form-control" />
+                                    <label class="form-label" for="form3Example1q">Password</label>
                                 </div>
                                     <div class="row mb-1 pb-2 pd-md-0">
                                         <div class="col-md-6">
