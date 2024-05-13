@@ -20,7 +20,7 @@ import { JobService } from '../../service/job.service';
 
 export class LoginComponent {
   loginObj:any={
-    "userName":"",
+    "EmailId":"",
     "Password":""
   }
   constructor(private jobSrv :JobService,private router : Router ){
@@ -30,6 +30,7 @@ export class LoginComponent {
     this.jobSrv.login(this.loginObj).subscribe((res:any)=>{
       if(res.Result){
         alert('User logged in Success')
+        localStorage.setItem('jobLoginUser',JSON.stringify(res.doc))
         this.router.navigate(["/home"])
       }
       else{

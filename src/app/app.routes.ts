@@ -41,7 +41,7 @@ export const routes: Routes = [
     }
     ,
     {
-        path:'job-details',
+        path:'job-details/:jobid',
         component:JobDetailsComponent
     }
     ,

@@ -35,7 +35,6 @@ export class RegistrationComponent {
     "ResumeUrl": "",
   }
   constructor(private job:JobService,private router : Router){
-    
   }
   register(){
     this.job.registerEmployer(this.employerObj).subscribe((res:any)=>{

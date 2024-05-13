@@ -13,17 +13,26 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" routerLink="/jobs">Jobs</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Companies</a>
+            
+                <li class="nav-item"  >
+                    <a class="nav-link" *ngIf="isEmployer" routerLink="/create-new-job" href="#">Create new job</a>
                 </li>
-                <li class="nav-item" >
-                    <a class="nav-link" href="#">Services</a>
+                <li class="nav-item"  >
+                    <a class="nav-link" *ngIf="isEmployer" routerLink="/job-listing" href="#">job Listing</a>
                 </li>
 
             </ul>
             <form class="d-flex">
-                <button routerLink="/login" class="btn btn-outline-primary round-button mx-2" type="button">Login</button>
-                <button routerLink="/registraion" class="btn btn-success round-button" type="button">Register</button>
+                
+                <button *ngIf="!isLoggedIn"  routerLink="/login" class="btn btn-outline-primary round-button mx-2" type="button">Login</button>
+                <button *ngIf="!isLoggedIn" routerLink="/registraion" class="btn btn-success round-button" type="button">Register</button>
+                <button *ngIf="isLoggedIn" class="btn btn-link" type="button">{{userInfo.EmailId}}</button>
+
+                
+                <button *ngIf="isLoggedIn" (click)="logoff()" class="btn btn-success round-button" type="button">Logout</button>
+
+                
+
             </form>
         </div>
     </div>

@@ -10,15 +10,15 @@
                             <div class="row pb-2">
                                 <div class="col-12 text-center">
                                     <div class="btn-group">
-                                        <button type="button" (click)="isJobSeeker=true" class="btn" [ngClass]="isJobSeeker==true ? 'btn-success' : 'btn-primary'">Job Seeker</button>
-                                        <button type="button" (click)="isJobSeeker=false" class="btn" [ngClass]="isJobSeeker==false? 'btn-success' : 'btn-primary'">Employer</button>
+                                        <button type="button" (click)="isJobSeeker=true" class="btn" [ngClass]="isJobSeeker==true ? 'btn-danger' : 'btn-primary'">Job Seeker</button>
+                                        <button type="button" (click)="isJobSeeker=false" class="btn" [ngClass]="isJobSeeker==false? 'btn-danger' : 'btn-primary'">Employer</button>
                                     </div>
                                     
                                 </div>
                             </div>
                             <div *ngIf="isJobSeeker">
                                 <div class="form-outline mb-1">
-                                    <input type="text" id="form3Example1q" [(ngModel)]="jobSeekerObj.FullName"name="FullName" class="form-control" />
+                                    <input type="text" id="form3Example1q" [(ngModel)]="jobSeekerObj.FullName" name="FullName" class="form-control" />
                                     <label class="form-label" for="form3Example1q">Full Name</label>
                                 </div>
                                 <div class="row">
@@ -91,7 +91,7 @@
                                     </div>
                                 </div>
                                 <div class="form-outline mb-1">
-                                    <input type="text" id="form3Example1q" [(ngModel)]="jobSeekerObj.Password"name="Password" class="form-control" />
+                                    <input type="text" id="form3Example1q" [(ngModel)]="employerObj.Password"name="Password" class="form-control" />
                                     <label class="form-label" for="form3Example1q">Password</label>
                                 </div>
                                     <div class="row mb-1 pb-2 pd-md-0">
@@ -104,7 +104,7 @@
                                         <div class="col-md-6">
                                             <div class="form-outline">
                                                 <input type="text"[(ngModel)]="employerObj.GstNo"name="GstNo" class="form-control" id="form3Example1w" />
-                                                <label for="form3Example1w" class="form-label">GST No</label>
+                                                <label for="form3Example1w" class="form-label">Bussiness Number</label>
                                             </div>
                                         </div>
     

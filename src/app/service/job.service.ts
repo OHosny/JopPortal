@@ -19,4 +19,29 @@ export class JobService {
   login(obj :any){
     return this.http.post(this.apiEndPoint + 'users/login',obj)
   }
+  getAllCategories()
+  {
+    return this.http.get(this.apiEndPoint + 'categories')
+  }
+  createNewJob(obj : any){
+    return this.http.post(this.apiEndPoint + 'jobs',obj)
+  }
+  getActiveJobs(){
+    return this.http.get(this.apiEndPoint + 'jobs/active')
+  }
+  getJobListingById(jobid :number){
+    return this.http.get(this.apiEndPoint + 'jobs/job/' + jobid)
+  }
+  SendJopApplication(obj : any){
+    return this.http.post(this.apiEndPoint + 'applications',obj)
+  }
+  GetJobsByEmployerId(employerid : number){
+    return this.http.get(this.apiEndPoint + 'jobs/employer/'+ employerid)
+  }
+  rejectJobApplication(jobid :string){
+    return this.http.delete(this.apiEndPoint + 'jobs/'+ jobid)
+  }
+
+  
+
 }
